@@ -1,15 +1,56 @@
 body {
     background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/people-playing-paper-rock-scissors-royalty-free-illustration-1583269312.jpg?crop=0.994xw:0.799xh;0.00160xw,0.195xh&resize=1600:*);
+    background-color: #7699ad;
     background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Architects Daughter', cursive;
+}
+
+@media (max-width: 700px) {
+    body { 
+        background-image: none;
+        background-color: #82a2b1;
+    }
+}
+
+.title {
+    text-shadow: 2px 2px 2px white;
+    color: blue;
 }
 
 .choices-area {
     background-color: white;
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
     width: 80%
 }
 
-.col-6 {
-    padding: 0px !important;
+.font-1 {
+    font-family: 'Anton', sans-serif;
 }
+
+.font-2 {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.font-3 {
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+.font-4 {
+    font-family: 'Courgette', cursive;
+}
+
+.font-5 {
+    font-family: 'Lexend Mega', sans-serif;
+}
+
+.font-6 {
+    font-family: 'Merriweather', serif;
+}
+
+.font-7 {
+    font-family: 'Stalinist One', cursive;
+}
+
+
