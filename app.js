@@ -1,5 +1,6 @@
 let playerScore = 0
 let cpuScore = 0
+let alertsOn = true
 
 function play(playerChoice) {
     let cpuChoice = randomChoice()
@@ -25,6 +26,7 @@ function randomChoice() {
     return cpuChoice
 }
 function determineWinner(playerChoice, cpuChoice) {
+    
     let resultText
     switch (playerChoice) {
         case cpuChoice:
@@ -32,33 +34,57 @@ function determineWinner(playerChoice, cpuChoice) {
             break;
         case "Rock":
             if (cpuChoice == "Scissors") {
-                resultText = "You won! Defend your title?"
+                resultText = "You won! Play again?"
                 playerScore++
+                resultAlert("You won! Play again?")
             } else {
                 resultText = "You lost... Try again?"
                 cpuScore++
+                resultAlert("You lost... Try again?")
             }
             break;
         case "Paper":
             if (cpuChoice == "Rock") {
-                resultText = "You won! Defend your title?"
+                resultText = "You won! Play again?"
                 playerScore++
+                resultAlert("You won! Play again?")
             } else {
                 resultText = "You lost... Try again?"
                 cpuScore++
+                resultAlert("You lost... Try again?")
             }
             break;
         case "Scissors":
             if (cpuChoice == "Paper") {
-                resultText = "You won! Defend your title?"
+                resultText = "You won! Play again?"
                 playerScore++
+                resultAlert("You won! Play again?")
             } else {
                 resultText = "You lost... Try again?"
                 cpuScore++
+                resultAlert("You lost... Try again?")
             }
             break;
         default:
             resultText = "Error"
     }
     return resultText
+}
+function resultAlert(alertMessage) {
+    if (alertsOn) {
+        alert(alertMessage)
+    }
+}
+function toggleAlerts() {
+    if (alertsOn) {
+        alertsOn = false
+        document.getElementById("toggleAlertsButton").innerHTML = "Alerts Off"
+        document.getElementById("toggleAlertsButton").classList.remove("btn-primary")
+        document.getElementById("toggleAlertsButton").classList.add("btn-danger")
+    } else {
+        alertsOn = true
+        document.getElementById("toggleAlertsButton").innerHTML = "Alerts On"
+        document.getElementById("toggleAlertsButton").classList.remove("btn-danger")
+        document.getElementById("toggleAlertsButton").classList.add("btn-primary")
+    }
 }
